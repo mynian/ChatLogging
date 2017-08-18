@@ -23,7 +23,7 @@ local clbutton1 = CreateFrame("Button", "clbutton1", clframe, "UIPanelButtonTemp
 clbutton1:SetWidth(150)
 clbutton1:SetHeight(25)
 clbutton1:SetPoint("TOP", clframe, "TOP", 0, -5)
-clbutton1:SetText("Start Log")
+clbutton1:SetText("Start Chat Log")
 clbutton1:RegisterForClicks("LeftButtonUp")
 
 --Create Stop Log Button
@@ -31,7 +31,7 @@ local clbutton2 = CreateFrame("Button", "clbutton2", clframe, "UIPanelButtonTemp
 clbutton2:SetWidth(150)
 clbutton2:SetHeight(25)
 clbutton2:SetPoint("BOTTOM", clframe, "BOTTOM", 0, 5)
-clbutton2:SetText("Stop Log")
+clbutton2:SetText("Stop Chat Log")
 clbutton2:RegisterForClicks("LeftButtonUp")
 
 --Default Log to off
