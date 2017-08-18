@@ -3,8 +3,8 @@ local clframe = CreateFrame("Frame", "ChatLogging", UIParent);
 clframe:SetWidth(160);
 clframe:SetHeight(60);
 clframe:SetPoint("CENTER", UIParent, "CENTER");
-clframe:SetMovable(true);
 clframe:EnableMouse(true);
+clframe:SetMovable(true);
 clframe:RegisterForDrag("LeftButton");
 clframe:SetScript("OnDragStart", clframe.StartMoving);
 clframe:SetScript("OnDragStop", clframe.StopMovingOrSizing);
@@ -17,6 +17,9 @@ clframe:SetBackdrop({
     edgeSize=10,})
 clframe:SetBackdropColor(0,0,0,.8)
 clframe:SetBackdropBorderColor(1,1,1,1)
+
+--Anchor positions to keep from moving on reload
+
 
 --Create Start Log button
 local clbutton1 = CreateFrame("Button", "clbutton1", clframe, "UIPanelButtonTemplate")
@@ -65,3 +68,26 @@ end
 --Addon the script to the Stop Button
 clbutton2:SetScript("OnClick", StopLog)
 
+
+--Slash broken, it fucks up the positioning for some reason
+--[[Create Slash Command 
+SLASH_CHATLOGGING1, SLASH_CHATLOGGING2 = '/chatlogging', '/chlg';
+function SlashCmdList.CHATLOGGING(msg, editBox)
+	local command, rest = msg:match("^(%S*)%s*(.-)$");
+	if string.lower(command) == 'lock' then
+		clframe:SetMovable(false);
+		clframe:EnableMouse(false);
+		print("ChatLogging: Frame Locked")
+	elseif string.lower(command) == 'unlock' then
+		clframe:SetMovable(true);
+		clframe:EnableMouse(true);
+		clframe:RegisterForDrag("LeftButton");
+		clframe:SetScript("OnDragStart", clframe.StartMoving);
+		clframe:SetScript("OnDragStop", clframe.StopMovingOrSizing);
+		print("ChatLogging: Frame Unlocked, remember to lock frame when done moving!")
+	else 
+		print("ChatLogging: Not a valid entry")
+		print("ChatLogging: Valid entries are lock or unlock")		
+	end
+end	
+]]	
