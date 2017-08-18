@@ -18,9 +18,6 @@ clframe:SetBackdrop({
 clframe:SetBackdropColor(0,0,0,.8)
 clframe:SetBackdropBorderColor(1,1,1,1)
 
---Anchor positions to keep from moving on reload
-
-
 --Create Start Log button
 local clbutton1 = CreateFrame("Button", "clbutton1", clframe, "UIPanelButtonTemplate")
 clbutton1:SetWidth(150)
@@ -68,7 +65,6 @@ end
 --Addon the script to the Stop Button
 clbutton2:SetScript("OnClick", StopLog)
 
-
 --Slash broken, it fucks up the positioning for some reason
 --[[Create Slash Command 
 SLASH_CHATLOGGING1, SLASH_CHATLOGGING2 = '/chatlogging', '/chlg';
@@ -90,4 +86,4 @@ function SlashCmdList.CHATLOGGING(msg, editBox)
 		print("ChatLogging: Valid entries are lock or unlock")		
 	end
 end	
-]]	
+]]
