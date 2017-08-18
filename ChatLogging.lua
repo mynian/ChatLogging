@@ -27,7 +27,6 @@ clbutton1:SetText("Start Log")
 clbutton1:RegisterForClicks("LeftButtonUp")
 
 --Create Stop Log Button
-
 local clbutton2 = CreateFrame("Button", "clbutton2", clframe, "UIPanelButtonTemplate")
 clbutton2:SetWidth(150)
 clbutton2:SetHeight(25)
@@ -36,34 +35,22 @@ clbutton2:SetText("Stop Log")
 clbutton2:RegisterForClicks("LeftButtonUp")
 
 --Default Log to off
-
 isLogging = LoggingChat(false)
 
 --Start Logging Function
-
-local function StartLog(self)
-
-isLogging = LoggingChat(true)
-
-print("Chat is now being logged to Logs\\WoWChatLog.txt")
-
+local function StartLog(self)    
+    isLogging = LoggingChat(true)
+    print("Chat is now being logged to Logs\\WoWChatLog.txt")
 end
 
 --Add the script to Start Button
-
 clbutton1:SetScript("OnClick", StartLog)
 
 --Stop Logging Function
-
 local function StopLog(self)
-
-isLogging = LoggingChat(false)
-
-print("Chat is no longer being logged.")
-
+    isLogging = LoggingChat(false)
+    print("Chat is no longer being logged.")
 end
 
 --Addon the script to the Stop Button
-
 clbutton2:SetScript("OnClick", StopLog)
-
