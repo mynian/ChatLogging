@@ -38,19 +38,30 @@ clbutton2:RegisterForClicks("LeftButtonUp")
 isLogging = LoggingChat(false)
 
 --Start Logging Function
-local function StartLog(self)    
-    isLogging = LoggingChat(true)
-    print("Chat is now being logged to Logs\\WoWChatLog.txt")
+local function StartLog(self)	
+	if (LoggingChat()) then
+		print("Chat is already being logged")
+	else
+		print("Chat is not being logged - starting it!")  
+		LoggingChat(1)
+		print("Chat is now being logged to Logs\\WOWChatLog.txt")
+	end	
 end
 
 --Add the script to Start Button
 clbutton1:SetScript("OnClick", StartLog)
 
 --Stop Logging Function
-local function StopLog(self)
-    isLogging = LoggingChat(false)
-    print("Chat is no longer being logged.")
+local function StopLog(self)	
+	if not (LoggingChat()) then
+		print("Chat is already not being logged")
+	else
+		print("Chat is being logged - stopping it!")  
+		LoggingChat(1)
+		print("Chat is no longer being logged to Logs\\WOWChatLog.txt")
+	end
 end
 
 --Addon the script to the Stop Button
 clbutton2:SetScript("OnClick", StopLog)
+
