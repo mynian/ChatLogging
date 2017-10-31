@@ -1,6 +1,6 @@
-## Interface: 70300
+## Interface: 70302
 ## Title: ChatLogging
 ## Notes: Adds buttons to easy start and stop chat logging
-## Version: 1.1.2
+## Version: 1.1.3
 
 ChatLogging.lua
