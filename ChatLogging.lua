@@ -1,5 +1,5 @@
 --Create the anchor frame
-local clframe = CreateFrame("Frame", "ChatLogging", UIParent);
+local clframe = CreateFrame("Frame", "ChatLogging", UIParent, BackdropTemplateMixin and "BackdropTemplate");
 clframe:SetWidth(160);
 clframe:SetHeight(60);
 clframe:SetPoint("CENTER", UIParent, "CENTER");
